@@ -43,6 +43,7 @@ public class MainAnime {
             String estudioAnime = "";
             System.out.println("Menu de Estudios");
             System.out.println("Ingrese Nombre del Anime");
+            teclado.nextLine();
             nombreAnime = teclado.nextLine();
             System.out.println("Ingrese horario del Anime --(<Inicio - Fin>) || (<16-20>)--");
             horarioAnime = teclado.nextLine();
