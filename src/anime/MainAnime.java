@@ -61,6 +61,9 @@ public class MainAnime {
     public static void main(String[] args) {
         // TODO code application logic here
         int opcion = 0;
+        String horario="16-16";
+        boolean a;
+        a=horario.matches("^\\d{2}-\\d{2}$");
 
         do {
             try {
