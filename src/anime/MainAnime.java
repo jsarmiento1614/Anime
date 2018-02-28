@@ -45,8 +45,17 @@ public class MainAnime {
             System.out.println("Ingrese Nombre del Anime");
             teclado.nextLine();
             nombreAnime = teclado.nextLine();
-            System.out.println("Ingrese horario del Anime --(<Inicio - Fin>) || (<16-20>)--");
+            boolean hCorrecto=false;
+            do{
+            System.out.println("Ingrese horario del Anime --(<Inicio - Fin>) || (<16:00-20:00>)--");
             horarioAnime = teclado.nextLine();
+            hCorrecto=horarioAnime.matches("^\\d{2}:\\d{2}-\\d{2}:\\d{2}$");
+            if(hCorrecto==false){
+               System.out.println("Formato incorrecto --(<Inicio - Fin>) || (<16-20>)--");
+            }else{
+                //validar hora 00:00-00-00     23:59:23:59   otra validadcion 00:00-00:01   23:59-00:00
+            }
+            }while(hCorrecto==false);
             System.out.println("Ingrese Estudio del Anime");
             estudioAnime = teclado.nextLine();
             Animes anime = new Animes(nombreAnime, horarioAnime, estudioAnime); 
@@ -54,8 +63,7 @@ public class MainAnime {
             arregloAnime[posicion]=anime;
         }else{
             System.out.println("Ya no hay horarios disponibles para su anime");
-        }
-       
+        }  
     }
 
     public static void main(String[] args) {
@@ -64,7 +72,7 @@ public class MainAnime {
         String horario="16-16";
         boolean a;
         a=horario.matches("^\\d{2}-\\d{2}$");
-
+        
         do {
             try {
                 System.out.println("Menu");
